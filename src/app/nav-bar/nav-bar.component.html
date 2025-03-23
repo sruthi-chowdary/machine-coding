@@ -1,0 +1,27 @@
+<div class="side-nav" [ngClass]="isLeftSideBarCollapsed?'sidenav-collapsed':''">
+    <div class="side-nav__logo-container">
+        <div class="side-nav__logo-container--logo" (click)="toggleCollapse()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        @if (!isLeftSideBarCollapsed) {
+            <div class="side-nav__logo-container__logo-text">
+                App
+            </div>
+            <div class="side-nav__logo-container__close"  (click)="closeSideBar()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        }
+    </div>
+    <div class="side-nav__items">
+        @for (item of items; track $index) {
+            <li class="side-nav__items__item">
+                <a class="side-nav__items__item__navlink" [routerLink]="item.routerLink" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
+                    <i class="side-nav__items__item__navlink--icon" [class]="item.icon"></i>
+                    @if (!isLeftSideBarCollapsed) {
+                        <span  class="side-nav__items__item__navlink--label">{{item.label}}</span>
+                    }
+                </a>
+            </li>
+        }
+    </div>
+</div>

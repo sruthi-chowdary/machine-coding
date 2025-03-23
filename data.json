@@ -1,0 +1,58 @@
+{
+    "fileExplorer":[
+        {
+            "name": "src",
+            "isFolder": true,
+            "isExpanded": true,
+            "id":1,
+            "children": [
+                { 
+                    "id":2,
+                    "name": "app",
+                    "isFolder" : true,
+                    "isExpanded": true,
+                    "children": [
+                        {
+                            "id":3,
+                            "name": "easy-problems",
+                            "isFolder": true,
+                            "isExpanded": true,
+                            "children" : [
+                                {
+                                    "id":4,
+                                    "name" : "easy-problems.component.html",
+                                    "isFolder" : false
+                                },
+                                {
+                                    "id":5,
+                                    "name" : "easy-problems.component.less",
+                                    "isFolder" : false
+                                },
+                                {
+                                    "id":6,
+                                    "name" : "easy-problems.component.ts",
+                                    "isFolder" : false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name" : "package.json",
+            "isFolder": false
+        },
+        {
+            "name" : "angular.json",
+            "isFolder": false
+        },
+        {
+            "name" : "server.ts",
+            "isFolder": false
+        }
+        
+    
+    ]
+    
+}

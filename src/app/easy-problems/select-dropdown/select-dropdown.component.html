@@ -1,0 +1,41 @@
+<!-- klnhhu
+<div
+  class="gravty-dropdown-menu"
+  [ngStyle]="{ width: width }"
+  (mouseleave)="openDropdown = false"
+>
+  <ul class="gravty-dropdown-menu-items" [hidden]="!openDropdown" (keydown)="handleKeydown($event)">
+    <li
+     #dropdownOption
+      class="gravty-dropdown-menu-item"
+      (click)="selectItem(i)"
+      *ngFor="let item of items; let i = index;let last = last"
+      [value]="item.key"
+      tabindex="0"
+      role="listitem"
+      (keyup.enter)="selectItem(i)"
+      [attr.data-last]="last ? 'true' : null"
+    >
+      <div title="{{item.value}}">
+        {{ item.value }}
+      </div>
+      <span
+        *ngIf="values.includes(item.key)"
+        class="gravty-dropdown-menu-check"
+      ></span>
+    </li>
+  </ul>
+  <div class="gravty-dropdown-menu-btn" (click)="toggleDropdown()" tabindex="0" role="button" (keyup.enter)="toggleOnKeyEnter()">
+    <div class="gravty-dropdown-menu-title" title="{{title}}">{{ title }}</div>
+    <div class="gravty-dropdown-menu-caret-down"></div>
+  </div>
+</div> -->
+<div  [hidden]="!openDropdown" >
+    <ul *ngFor="let item of items">
+        <li>{{item.value}}</li>
+      </ul>
+</div>
+
+  <div class="btn" (click)="toggleDropdown()">
+    <div class="title">{{title}}</div>  
+  </div>

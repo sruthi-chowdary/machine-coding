@@ -1,0 +1,14 @@
+<div class="autocomplete-wrapper">
+    <input type="text" #searchInput placeholder="search" [formControl]="searchControl" >
+    @if (searchedData?.length) {
+        <div class="autocomplete-wrapper__autocomplete-dropdown">
+            <ul>
+                @for (item of searchedData; track $index) {
+                    <li>{{item.title}}</li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+<a routerLink="../select">Select Comp</a>
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+<ul>
+  @for (item of fileData; track item.id) {
+  <li>
+    @if (item.isFolder) {
+    <span (click)="toggleExpand(item)">{{ item.name }}</span>
+    <span (click)="create(item, true)">+</span>
+    <span (click)="create(item, false)">📄</span>
+    } 
+    
+    @if (!item.name) {
+    <input type="text" [(ngModel)]="item.tempName" placeholder="enter name" (blur)="saveValue(item)"  />
+    } @else {
+    <div><span *ngIf="!item.isFolder"> 📄 {{ item.name }}</span></div>
+    } 
+    @if (item?.children?.length>0 && item?.isExpanded) {
+    <app-folders-list [fileData]="item.children"></app-folders-list>
+    } 
+  </li>
+  }
+</ul>
