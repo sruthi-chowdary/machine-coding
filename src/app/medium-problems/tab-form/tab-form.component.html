@@ -1,0 +1,10 @@
+<div class="tabs">
+    <div class="tabs__tab-container">
+        @for (tab of tabs; track $index;) {
+            <div class="tabs__tab-container__tab" [class.active]="activeTab == $index" (click)="selectTab($index)">{{tab.name}}</div>  
+        }
+    </div>
+    <div class="tabs__content">
+        <ng-container *ngComponentOutlet="tabs[activeTab]?.component || null; inputs: tabs[activeTab].data"></ng-container>
+    </div>
+</div>

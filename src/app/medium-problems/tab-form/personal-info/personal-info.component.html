@@ -1,0 +1,17 @@
+<p>personal-info works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <span> User Name</span>
+    <input type="text" formControlName="firstName"/>
+    @if (formGroup.controls["firstName"].touched && formGroup.controls["firstName"].invalid) {
+        Name is required
+    }
+    <div formArrayName="skills">
+        @for (skill of skills.controls; track $index) {
+            <div>        <input type="text" [formControlName]="$index">
+                <button (click)="removeSkill($index)">-</button>
+                @if ($index == skills.controls.length-1) {
+                    <button (click)="addSkill()">+</button>
+                }</div>
+        }
+    </div>
+</form>

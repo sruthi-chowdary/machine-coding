@@ -8,6 +8,7 @@ import { OtpFieldComponent } from './easy-problems/otp-field/otp-field.component
 import { SelectDropdownComponent } from './easy-problems/select-dropdown/select-dropdown.component';
 import { MachineCodingComponent } from './machine-coding/machine-coding.component';
 import { FileExplorerComponent } from './machine-coding/file-explorer/file-explorer.component';
+import { TabFormComponent } from './medium-problems/tab-form/tab-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -20,7 +21,11 @@ export const routes: Routes = [
       { path: 'select', component: SelectDropdownComponent },
     ],
   },
-  { path: 'medium', component: MediumProblemsComponent },
+  {
+    path: 'medium',
+    component: MediumProblemsComponent,
+    children: [{ path: 'tabform', component: TabFormComponent }],
+  },
   { path: 'hard', component: HardProblemsComponent },
   {
     path: 'machine-coding',

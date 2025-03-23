@@ -1,45 +1,8 @@
-<a routerLink="autocomplete">AutoComplete</a>
-<a routerLink="select">Select</a>
+<ul>
+  <li><a routerLink="autocomplete">AutoComplete</a></li>
+  <li><a routerLink="select">Select</a></li>
+</ul>
 <div class="problems-wrapper">
     <router-outlet></router-outlet>
 </div>
-
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <span> First Name</span>
-    <input type="text" formControlName="firstName"/>
-    @if (formGroup.controls["firstName"].touched && formGroup.controls["firstName"].invalid) {
-        Name is required
-    }
-    <div formArrayName="skills">
-       <div *ngFor="let skill of skills.controls; let i = index">
-        <input type="text" [formControlName]="i">
-        <button (click)="removeSkill(i)">-</button>
-        @if (i == skills.controls.length-1) {
-            <button (click)="addSkill()">+</button>
-        }
-       </div>
-    </div>
-</form>
-
-<h1> Pagination</h1>
-<div *ngFor="let item of paginatedItems">
-    {{ item }}
-  </div>
-  
-  <!-- Pagination Controls -->
-  <div class="pagination">
-    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
-      Prev
-    </button>
-  
-    <span *ngFor="let page of [].constructor(totalPages); let i = index">
-      <button (click)="changePage(i + 1)" [class.active]="currentPage === i + 1">
-        {{ i + 1 }}
-      </button>
-    </span>
-  
-    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
-      Next
-    </button>
-  </div>
   
